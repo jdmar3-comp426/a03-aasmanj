@@ -54,5 +54,7 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-
+    const tmp = {}
+    for ( const num of array) { tmp[num] = tmp[num] ? tmp[num] + 1 : 1;  }
+    return tmp
 }
