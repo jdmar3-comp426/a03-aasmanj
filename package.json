@@ -1,5 +1,6 @@
 {
   "name": "a03",
+  "type": "module",
   "version": "2.1.0",
   "description": "",
   "main": " test.js",
