@@ -25,7 +25,7 @@ export function identifyVariable(variable) {
  */
 export function identifyArray(array) {
    const arr = new Array()
-   for (let i=0; i<array.length; i++) { arr[i] = `{ type: ${typeof(array[i])}, value: ${array[i] }}`; }
+   for (let i=0; i<array.length; i++) { arr[i] = `{ type: '${typeof(array[i])}', value: ${array[i]} }`; }
    return arr;
 }
 
@@ -46,7 +46,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   delete object.key;
+   delete object[key];
 }
 
 /**
