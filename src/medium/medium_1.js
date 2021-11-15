@@ -54,8 +54,8 @@ export function getMedian(array) {
 export function getStatistics(array) {
     let len = array.length;
     array = array.sort();
-    let min = array[0];
-    let max = array[array.length-1];
+    let min = Math.min(...array);
+    let max = Math.max(...array);
     let med = getMedian(array);
     let sum = getSum(array);
     let avg = sum / len;
