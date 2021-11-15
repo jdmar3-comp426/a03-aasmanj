@@ -57,9 +57,9 @@ export function getStatistics(array) {
     let med = getMedian(array);
     let min = array.sort()[0];
     let max = array.sort()[array.length-1];
-    //variance //= variance(array);
-    let std_dev = Math.sqrt(variance);
+    vari = variance(array);
+    let std_dev = Math.sqrt(vari);
     //return { length: len, sum: s, mean: avg, median: med, min: mi, max: ma, variance = vari, standard_deviation: std_dev}
-    return `{length: ${len}, sum: ${sum}, mean: ${avg}, median: ${med}, min: ${min}, max: ${max}, variance = ${variance}, standard_deviation: ${std_dev}}`
+    return `{length: ${len}, sum: ${sum}, mean: ${avg}, median: ${med}, min: ${min}, max: ${max}, variance = ${vari}, standard_deviation: ${std_dev}}`
 }
 
