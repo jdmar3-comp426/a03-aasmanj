@@ -100,4 +100,5 @@ export function removeKeys(object, keyList) {
    if (keyList.length > 0) {
       return removeKeys(rest, keyList)
    }
+   return rest
 }  
