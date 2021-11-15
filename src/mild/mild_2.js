@@ -24,7 +24,10 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-   for (let i=0; i<array.length; i++) { array[i] = `{ type: '${typeof(array[i])}', value: ${array[i]} }`; }
+   for (let i=0; i<array.length; i++) { 
+      array[i] = {type: typeof array[i], value: array[i]}
+   }
+   //for (let i=0; i<array.length; i++) { array[i] = `{ type: '${typeof(array[i])}', value: ${array[i]} }`; }
    return array;
 }
 
