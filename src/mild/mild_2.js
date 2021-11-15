@@ -66,7 +66,7 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-
+   [key, ...object] = object 
 }
 
 /**
@@ -85,11 +85,12 @@ export function removeKeyNonDestructive(object, key) {
     password: 'pass123'
  };
  obj = removeKeys(obj, ['password', 'age']);
- // object not looks like this
+ // object now looks like this
  { name: 'Mr. Boss', title: 'boss' }
 
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-
+// make a copy? 
+   delete object[keyList]
 }
