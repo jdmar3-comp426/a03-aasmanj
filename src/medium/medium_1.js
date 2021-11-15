@@ -50,6 +50,7 @@ export function getMedian(array) {
   standard_deviation: 1.632993161855452
  }
  */
+
 export function getStatistics(array) {
     let len = array.length;
     let sum = getSum(array);
