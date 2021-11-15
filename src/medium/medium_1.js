@@ -52,10 +52,11 @@ export function getMedian(array) {
  */
 
 export function getStatistics(array) {
+    let len = array.length;
     array = array.sort();
     let min = array[0];
     let max = array[array.length-1];
-    let len = array.length;
+    let med = getMedian(array);
     let sum = getSum(array);
     let avg = sum / len;
     let vari = variance(array, avg);
