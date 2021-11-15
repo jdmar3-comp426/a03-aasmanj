@@ -60,6 +60,6 @@ export function getStatistics(array) {
     let vari = variance(array, avg);
     let std_dev = Math.sqrt(vari);
     //return { length: len, sum: s, mean: avg, median: med, min: mi, max: ma, variance = vari, standard_deviation: std_dev}
-    return `{length: ${len}, sum: ${sum}, mean: ${avg}, median: ${med}, min: ${min}, max: ${max}, variance = ${vari}, standard_deviation: ${std_dev}}`
+    return `{ length: ${len}, sum: ${sum}, mean: ${avg}, median: ${med}, min: ${min}, max: ${max}, variance = ${vari}, standard_deviation: ${std_dev}}`
 }
 
