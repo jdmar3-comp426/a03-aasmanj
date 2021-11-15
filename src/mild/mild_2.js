@@ -24,9 +24,8 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-   const arr = new Array()
-   for (let i=0; i<array.length; i++) { arr[i] = `{ type: '${typeof(array[i])}', value: ${array[i]} }`; }
-   return arr;
+   for (let i=0; i<array.length; i++) { array[i] = `{ type: '${typeof(array[i])}', value: ${array[i]} }`; }
+   return array;
 }
 
 /**
@@ -66,7 +65,9 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-   [key, ...object] = object 
+   let {}
+   let {[key]: removed, ...rest} = object 
+   return rest
 }
 
 /**
@@ -91,6 +92,10 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-// make a copy? 
-   delete object[keyList]
-}
+// make a copy?
+   let {[keyList[keyList.length-1]]: removed, ...rest} = object
+   keyList.pop()
+   if (keyList.length > 0) {
+      return removeKeys(rest, keyList)
+   }
+}  
