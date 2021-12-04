@@ -58,7 +58,6 @@ export function getStatistics(array) {
         max: Math.max(...array),
         med: getMedian(array),
         sum: getSum(array),
-        mean: sum / len,
         vari: variance(array, getSum(array)/array.length),
         std_dev: Math.sqrt(variance(array,getSum(array)/array.length))
     }
