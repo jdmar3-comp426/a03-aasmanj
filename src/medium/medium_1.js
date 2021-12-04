@@ -59,8 +59,8 @@ export function getStatistics(array) {
         med: getMedian(array),
         sum: getSum(array),
         mean: sum / len,
-        vari = variance(array, getSum(array)/array.length),
-        std_dev = Math.sqrt(variance(array,getSum(array)/array.length))
+        vari: variance(array, getSum(array)/array.length),
+        std_dev: Math.sqrt(variance(array,getSum(array)/array.length))
     }
     return stats
 }
