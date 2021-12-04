@@ -52,16 +52,16 @@ export function getMedian(array) {
  */
 
 export function getStatistics(array) {
-    let len = array.length;
-    array = array.sort();
-    let min = Math.min(...array);
-    let max = Math.max(...array);
-    let med = getMedian(array);
-    let sum = getSum(array);
-    let avg = sum / len;
-    let vari = variance(array, avg);
-    let std_dev = Math.sqrt(vari);
-    //return { length: len, sum: s, mean: avg, median: med, min: mi, max: ma, variance = vari, standard_deviation: std_dev}
-    return `{  length: ${len},  sum: ${sum},  mean: ${avg},  median: ${med},  min: ${min},  max: ${max},  variance = ${vari},  standard_deviation: ${std_dev}}`
+    const stats = {
+        len: array.length,
+        min: Math.min(...array),
+        max: Math.max(...array),
+        med: getMedian(array),
+        sum: getSum(array),
+        mean: sum / len,
+        vari = variance(array, getSum(array)/array.length),
+        std_dev = Math.sqrt(variance(array,getSum(array)/array.length))
+    }
+    return stats
 }
 
