@@ -7,3 +7,4 @@ export function variance(array, mean) {
             return m;
         }, 0) / array.length;
 }
+
